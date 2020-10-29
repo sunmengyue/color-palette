@@ -1,11 +1,11 @@
 import React from 'react';
-import Palettes from './Palettes';
+import Palette from './Palette';
 import seedColors from './seedColors';
 
 const App = () => {
   return (
     <div>
-      <Palettes {...seedColors[4]} />
+      <Palette {...seedColors[6]} />
     </div>
   );
 };
