@@ -6,7 +6,7 @@ import MiniPalette from './MiniPalette';
 const styles = {
   root: {
     background: 'blue',
-    height: '100%',
+    height: '100vh',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'center',
@@ -37,6 +37,11 @@ class PaletteList extends Component {
   constructor(props) {
     super(props);
   }
+
+  goToPalette(id) {
+    console.log('hi');
+    this.props.history.push(`/palette/${id}`);
+  }
   render() {
     const { palettes, classes } = this.props;
     return (
@@ -47,7 +52,12 @@ class PaletteList extends Component {
           </nav>
           <div className={classes.palettes}>
             {palettes.map((p) => (
-              <MiniPalette {...p} />
+              <Link to={`/palette/${p.id}`}>
+                <MiniPalette
+                  {...p}
+                  handleClick={() => this.goToPalette(p.id)}
+                />
+              </Link>
             ))}
           </div>
         </div>
