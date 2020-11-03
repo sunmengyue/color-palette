@@ -30,6 +30,11 @@ class App extends Component {
             />
           )}
         />
+        <Route
+          paty='/palette/:id/:colorId'
+          exact
+          render={() => <h1>Single Color Page</h1>}
+        />
       </Switch>
       //   <div className='App'>
       //   <Palette palette={generatePalettes(seedColors[4])} />
