@@ -29,8 +29,8 @@ class Palette extends Component {
           color={c[format]}
           name={c.name}
           key={c.id}
-          id={c.id}
-          paletteId={id}
+          moreUrl={`/palette/${id}/${c.id}`}
+          showLink
         />
       );
     });

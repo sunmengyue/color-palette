@@ -10,11 +10,11 @@ class SingleColorPalette extends Component {
     this.state = { format: 'hex' };
     this.changeFormat = this.changeFormat.bind(this);
   }
-  gatherShades(palette, colorToFilter) {
+  gatherShades(palette, idOfcolorToFilter) {
     let shades = [];
     for (let key in palette.colors) {
       shades = shades.concat(
-        palette.colors[key].filter((color) => color.id === colorToFilter)
+        palette.colors[key].filter((color) => color.id === idOfcolorToFilter)
       );
     }
     //return all shads of a given color
@@ -26,8 +26,13 @@ class SingleColorPalette extends Component {
   render() {
     const { format } = this.state;
     const { paletteName, emoji } = this.props.palette;
-    const colorShadesBoxes = this._shades.map((shade) => (
-      <ColorBox key={shade.id} name={shade.name} color={shade[format]} />
+    const colorShadesBoxes = this._shades.map((color) => (
+      <ColorBox
+        key={color.id}
+        name={color.name}
+        color={color[format]}
+        showLink={false}
+      />
     ));
     return (
       <div className='Palette'>
