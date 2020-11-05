@@ -41,7 +41,7 @@ const styles = {
     display: 'inline-block',
     margin: '0 auto',
     position: 'relative',
-    marginBottom: '-4.7px',
+    marginBottom: '-3.3px',
   },
 };
 
