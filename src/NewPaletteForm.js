@@ -75,11 +75,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NewPaletteForm() {
+export default function NewPaletteForm({ savePalette, history }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [currentColor, setColor] = React.useState('teal');
-  const [colors, setNewColor] = React.useState([]);
+  const [colors, setNewColors] = React.useState([]);
   const [newName, setName] = React.useState('');
 
   const handleDrawerOpen = () => {
@@ -96,12 +96,23 @@ export default function NewPaletteForm() {
 
   function addNewColor() {
     const newColor = { color: currentColor, name: newName };
-    setNewColor((oldColors) => [...oldColors, newColor]);
+    setNewColors((oldColors) => [...oldColors, newColor]);
     setName('');
   }
 
   function handleChange(evt) {
     setName(evt.target.value);
+  }
+
+  function handleSubmit() {
+    const newName = 'new test name';
+    const newPalette = {
+      paletteName: newName,
+      id: newName.toLowerCase().replace(/ /g, '-'),
+      colors: colors,
+    };
+    savePalette(newPalette);
+    history.push('/');
   }
 
   React.useEffect(() => {
@@ -123,6 +134,7 @@ export default function NewPaletteForm() {
       <CssBaseline />
       <AppBar
         position='fixed'
+        color='default'
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
@@ -137,6 +149,9 @@ export default function NewPaletteForm() {
           >
             <MenuIcon />
           </IconButton>
+          <Button variant='contained' color='primary' onClick={handleSubmit}>
+            Save Palette
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
