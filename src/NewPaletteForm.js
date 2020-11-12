@@ -104,7 +104,7 @@ export default function NewPaletteForm({
 
   function addNewColor() {
     const newColor = { color: currentColor, name: newColorName };
-    setNewColors((oldColors) => [...oldColors, newColor]);
+    setNewColors([...colors, newColor]);
     setColorName('');
   }
 
