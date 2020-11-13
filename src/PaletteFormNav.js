@@ -8,7 +8,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import arrayMove from 'array-move';
 
 class PaletteFormNav extends Component {
   constructor(props) {
