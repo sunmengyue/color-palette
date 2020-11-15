@@ -103,7 +103,7 @@ class PaletteFormNav extends Component {
               variant='contained'
               color='primary'
               onClick={this.showForm}
-              classes={classes.button}
+              className={classes.button}
             >
               Save
             </Button>
@@ -114,6 +114,7 @@ class PaletteFormNav extends Component {
             palettes={palettes}
             handleSubmit={handleSubmit}
             hideForm={this.hideForm}
+            showForm={this.showForm}
           />
         )}
       </div>

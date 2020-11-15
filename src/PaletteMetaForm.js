@@ -13,7 +13,6 @@ class PaletteMetaForm extends Component {
   constructor(props) {
     super(props);
     this.state = { open: true, newPaletteName: '' };
-    this.handleClickOpen = this.handleClickOpen.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -28,10 +27,6 @@ class PaletteMetaForm extends Component {
   handleChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value });
   }
-
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
 
   render() {
     const { newPaletteName } = this.state;

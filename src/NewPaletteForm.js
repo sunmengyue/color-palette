@@ -165,12 +165,12 @@ export default function NewPaletteForm({
               variant='contained'
               color='secondary'
               onClick={clearColors}
-              classes={classes.button}
+              className={classes.button}
             >
               Clear Palette
             </Button>
             <Button
-              classes={classes.button}
+              className={classes.button}
               variant='contained'
               color='primary'
               onClick={addRandomColor}
@@ -180,7 +180,7 @@ export default function NewPaletteForm({
             </Button>
           </div>
           <ColorPickerForm
-            class={classes.colorPickerForm}
+            className={classes.colorPickerForm}
             addNewColor={addNewColor}
             paletteIsFull={paletteIsFull}
             colors={colors}
