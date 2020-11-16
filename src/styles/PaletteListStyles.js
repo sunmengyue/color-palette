@@ -1,6 +1,15 @@
 import sizes from './sizes';
 import bg from './bg.svg';
 export default {
+  '@global': {
+    '.fade-exit': {
+      opacity: 1,
+    },
+    '.fade-exit-active': {
+      opacity: 0,
+      transition: 'opacity 500ms ease-out',
+    },
+  },
   root: {
     backgroundColor: '#1e8feb',
     backgroundImage: `url(${bg})`,
@@ -23,9 +32,7 @@ export default {
     flexDirection: 'column',
     flexWrap: 'wrap',
   },
-  [sizes.down('xl')]: {
-    width: '70%',
-  },
+
   nav: {
     display: 'flex',
     width: '100%',
@@ -40,10 +47,10 @@ export default {
 
   palettes: {
     boxSizing: 'border-box',
-    width: '100%',
+    width: '90%',
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 30%)',
-    gridGap: '1.5rem',
+    gridGap: '2rem',
 
     [sizes.down('md')]: {
       gridTemplateColumns: 'repeat(2, 50%)',

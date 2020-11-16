@@ -1,7 +1,6 @@
 export default {
   root: {
     backgroundColor: 'white',
-    border: '1px solid black',
     borderRadius: '5px',
     padding: '0.5rem',
     position: 'relative',
