@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
+import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/NavbarStyle';
+import 'rc-slider/assets/index.css';
 
 class Navbar extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Navbar extends Component {
   }
   render() {
     const { level, changeLevel, showingAllColors, classes } = this.props;
-    const { format } = this.state;
+    const { format, open } = this.state;
     return (
       <header className={classes.Navbar}>
         <div className={classes.logo}>
@@ -57,12 +57,12 @@ class Navbar extends Component {
         </div>
         <Snackbar
           anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-          open={this.state.open}
+          open={open}
           onClick={this.closeSnackbar}
           autoHideDuration={3000}
           message={
             <span id='message-id'>
-              Format Changed To {this.state.format.toUpperCase()}!
+              Format Changed To {format.toUpperCase()}!
             </span>
           }
           ContentProps={{ 'aria-describedbyf': 'message-id' }}
