@@ -2,9 +2,3 @@
 .App {
   font-family: 'Nunito', sans-serif;
 }
-
-.page {
-  height: 100vh;
-  position: fixed;
-  width: 100%;
-}
