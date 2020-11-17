@@ -27,6 +27,7 @@ export default {
 
   slider: {
     width: '340px',
+
     margin: '0 10px',
     display: 'inline-block',
     '& .rc-slider-rail': {
@@ -45,8 +46,8 @@ export default {
       marginLeft: '-7px',
       marginTop: '-3px',
     },
-    [sizes.down('md')]: {
-      width: '150xs',
+    [sizes.down('sm')]: {
+      width: '150px',
     },
   },
   selectContainer: {
