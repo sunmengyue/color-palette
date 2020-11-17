@@ -11,6 +11,7 @@ import arrayMove from 'array-move';
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
 import useStyles from './styles/NewPaletteFormStyles';
+import seedColors from './seedColors';
 
 export default function NewPaletteForm({
   palettes,
@@ -20,7 +21,7 @@ export default function NewPaletteForm({
 }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [colors, setNewColors] = React.useState(palettes[0].colors);
+  const [colors, setNewColors] = React.useState(seedColors[0].colors);
   const [newColorName, setColorName] = React.useState('');
   const paletteIsFull = colors.length >= maxColors;
 
